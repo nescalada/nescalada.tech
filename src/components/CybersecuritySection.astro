@@ -1,0 +1,220 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import SubTitleSection from "@/components/SubTitleSection.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Security from "./icons/Security.astro";
+
+const TAGS = {
+  BLUETEAM: {
+    name: "Blue Team",
+    class: "bg-blue-900 text-white",
+    icon: Security,
+  },
+  RISKASSESSMENT: {
+    name: "Risk Assessment",
+    class: "bg-yellow-900 text-white",
+    icon: null,
+  },
+  SECURITYOPERATION: {
+    name: "Security Operation",
+    class: "bg-green-900 text-white",
+    icon: null,
+  },
+  THREATINTELLIGENCE: {
+    name: "Threat Intelligence",
+    class: "bg-purple-900 text-white",
+    icon: null,
+  },
+  REDTEAM: {
+    name: "Red Team",
+    class: "bg-red-900 text-white",
+    icon: Security,
+  },
+  PENTEST: {
+    name: "Pen testing",
+    class: "bg-orange-900 text-white",
+    icon: null,
+  },
+  BASHANDCMD: {
+    name: "CMD",
+    class: "bg-black text-white",
+    icon: null,
+  },
+  NETWORKINGPROTOCOLS: {
+    name: "Networking & Protocols",
+    class: "bg-gray-200 text-black",
+    icon: null,
+  },
+  WEBSECURITY: {
+    name: "Web Security",
+    class: "bg-pink-900 text-white",
+    icon: null,
+  },
+  CRYPTOGRAPHY: {
+    name: "Cryptography",
+    class: "bg-indigo-900 text-white",
+    icon: null,
+  },
+  INTERNATIONALCOLLABORATION: {
+    name: "Intl. Collaboration",
+    class: "bg-teal-900 text-white",
+    icon: null,
+  },
+  AUTOMATION: {
+    name: "Scripting & AA",
+    class: "bg-gray-700 text-white",
+    icon: null,
+  },
+};
+
+const CYBERSECURITY = [
+  {
+    year: 2019,
+    title:
+      "#2 over 200 Adient facilities ww in Security Risk Points, starting from last places",
+    place: "at Adient",
+    description:
+      "Recognized for reducing the security risk score below the 10 points in Tenable metrics in few months, achieving the status of the #2 safest plant among all Adient facilities worldwide. After that, we continued to work hard with BI Analysis and AA to lower the risk even more. Additionally, I collaborated with other teams to help them to achieve similar scores in their plants by standarizing our work methodology.",
+    linkedin: "https://www.linkedin.com/in/tami-tamara-essenburgh-b226b99/",
+    github: null,
+    image: "/projects/tenableScore.webp",
+    href: null,
+    tags: [
+      TAGS.BLUETEAM,
+      TAGS.RISKASSESSMENT,
+      TAGS.SECURITYOPERATION,
+      TAGS.THREATINTELLIGENCE,
+      TAGS.AUTOMATION,
+      TAGS.INTERNATIONALCOLLABORATION,
+    ],
+  },
+  {
+    year: "2011/Now on my own",
+    place: null,
+    title: "Cybersecurity knowledge, challenges and exercises",
+    description:
+      "I hold several cybersecurity certificates, including 'Linux Certified Security System', 'Ethical Hacking Expert' and 'Privacy Awareness'. I regularly participate in cybersecurity challenges on platforms like HackTheBox, OverTheWire and others. Additionally, I stay up-to-date by following YouTube and Telegram channels such as SeguInfo and Chema Alonso enhancing my knowledge in CISSP, CCSK, CSFPC as well as other international certifications, tools and broader cybersecurity topics.",
+    link: null,
+    linkedin: "https://www.linkedin.com/in/nescalada/details/certifications/",
+    github: null,
+    util: "https://carreralinux.com.ar/administrador-de-redes-linux-ciberseguridad-y-hacking-etico/",
+    href: "https://www.linkedin.com/in/nescalada/details/certifications/",
+    image: "/projects/hackingCertificates.webp",
+    tags: [
+      TAGS.REDTEAM,
+      TAGS.PENTEST,
+      TAGS.BASHANDCMD,
+      TAGS.NETWORKINGPROTOCOLS,
+      TAGS.WEBSECURITY,
+    ],
+  },
+  {
+    year: "2017/2024",
+    place: "at Adient",
+    title: "Digital Certificates for Electronic Invoices & Bank Connections",
+    description:
+      "I was in charge of creating digital certificates for electronic invoices, participating in an international SAP team to achieve this functionality in our system. Collaborated with teams in Japan, Argentina, and the USA. My responsibilities included implementing encryption, hashes, and checksums, as well as managing certificate renewals. I also developed similar solutions for secure connections with our banking provider.",
+    link: null,
+    linkedin: null,
+    github: null,
+    href: null,
+    image: "/projects/cryptography.webp",
+    tags: [
+      TAGS.CRYPTOGRAPHY,
+      TAGS.INTERNATIONALCOLLABORATION,
+      TAGS.SECURITYOPERATION,
+      TAGS.RISKASSESSMENT,
+      TAGS.AUTOMATION,
+      TAGS.BLUETEAM,
+    ],
+  },
+];
+---
+
+<SubTitleSection>
+  {"<"}CyberSecurity{" />"}
+</SubTitleSection>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
+  {
+    CYBERSECURITY.map(
+      ({
+        image,
+        year,
+        title,
+        place,
+        description,
+        util: lcssplan,
+        link: preview,
+        linkedin,
+        github,
+        href,
+        tags,
+      }) => (
+        <div class="flex opacity-80 hover:opacity-100 flex-col space-x-0 group [&>strong]:text-blue-500 [&>strong]:font-semibold">
+          <ul class="flex items-center justify-center flex-wrap mb-2 gap-2 transition duration-500 ease-in-out transform overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  {tag.icon && <tag.icon class="size-4" />}
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div class="mb-2 relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <a href={href}>
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-54 transition duration-500 sm:h-auto md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </a>
+          </div>
+          <h5 class="text-xs text-center opacity-80 text-gray-800 dark:text-gray-100">
+            - {year + " "}
+            {place ? place : " "} -
+          </h5>
+          <h4 class="text-md text-center text-pretty font-bold text-gray-800 dark:text-gray-200">
+            {title}
+          </h4>
+          <div class="flex flex-wrap text-sm mt-1 text-center text-pretty text-gray-700 dark:text-gray-400">
+            {description}
+          </div>
+          <footer class="flex items-center justify-center mt-3 gap-x-2">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-4 " />
+                Code
+              </LinkButton>
+            )}
+            {preview && (
+              <LinkButton href={preview}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+            {lcssplan && (
+              <LinkButton href={lcssplan}>
+                <Link class="size-4" />
+                LCSS plan
+              </LinkButton>
+            )}
+            {linkedin && (
+              <LinkButton href={linkedin}>
+                <LinkedIn class="size-4" />
+                LinkedIn
+              </LinkButton>
+            )}
+          </footer>
+        </div>
+      )
+    )
+  }
+</div>

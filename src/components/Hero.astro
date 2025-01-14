@@ -1,0 +1,76 @@
+---
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import TelegramIcon from "@/components/icons/Telegram.astro";
+import NavArrowDownIcon from "@/components/icons/NavArrowDown.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<div class="w-full">
+  <a
+    href="https://linkedin.com/in/nescalada"
+    target="_blank"
+    rel="noopener"
+    class="flex items-center transition justify-center hover:scale-105"
+  >
+    <Badge><strong>#OpenToWork</strong></Badge>
+  </a>
+  <h1
+    class="mt-4 flex flex-col items-center justify-center gap-2 text-7xl font-bold text-center sm:flex-row [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-100"
+  >
+    ICT <strong>Specialist</strong>
+  </h1>
+  <div class="flex justify-center"></div>
+</div>
+<p
+  class="mt-8 text-gray-800 [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-300 text-center max-w-2xl break-words"
+>
+  Cybersecurity<strong> •</strong>
+  Data/BI Analytics<strong> •</strong>
+  DevOps & Programming<strong> •</strong>
+  Tier 4 Technical Support<strong> •</strong>
+  Infrastructure<strong> •</strong>
+  Networks<strong> •</strong>
+  Cloud<strong> •</strong>
+  Engineering & Best practices
+</p>
+
+<nav class="mt-10 flex flex-wrap gap-4 justify-center">
+  <SocialPill href="mailto:nehuenescalada@gmail.com">
+    <MailIcon class="size-4" />
+    Email
+  </SocialPill>
+  <SocialPill href="https://linkedin.com/in/nescalada">
+    <LinkedInIcon class="size-4" />
+    LinkedIn
+  </SocialPill>
+  <SocialPill href="https://t.me/nescalada">
+    <TelegramIcon class="size-4" />
+    Telegram
+  </SocialPill>
+</nav>
+
+<p
+  class="my-5 text-sm text-gray-800 [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-300 text-center max-w-72"
+>
+  <strong>CV, recommendations or certificates</strong> available upon request
+</p>
+
+<NavArrowDownIcon
+  id="scrollIcon"
+  class="absolute opacity-0 sm:top-[90vh] w-12 h-12 font-bold sm:opacity-10 animate-bounce transition-opacity duration-500"
+/>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const scrollIcon = document.getElementById("scrollIcon");
+    if (window.scrollY > 0) {
+      scrollIcon?.classList.add("sm:opacity-0");
+      scrollIcon?.classList.remove("sm:opacity-10");
+    } else {
+      scrollIcon?.classList.remove("sm:opacity-0");
+      scrollIcon?.classList.add("sm:opacity-10");
+    }
+  });
+</script>

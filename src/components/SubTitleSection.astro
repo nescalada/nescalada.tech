@@ -1,0 +1,23 @@
+<h3
+  class={`zoom-in-out-element mt-4 flex items-center text-3xl mb-8 font-semibold gap-x-3 text-blue-500 ${Astro.props.className}`}
+>
+  <slot />
+</h3>
+
+<style>
+  .zoom-in-out-element {
+    animation: zoom-in-zoom-out 2s ease infinite;
+  }
+
+  @keyframes zoom-in-zoom-out {
+    0% {
+      scale: 100%;
+    }
+    50% {
+      scale: 105%;
+    }
+    100% {
+      scale: 100%;
+    }
+  }
+</style>

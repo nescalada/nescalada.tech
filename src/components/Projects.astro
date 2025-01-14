@@ -1,0 +1,68 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+
+const PROJECTS = [
+  {
+    year: 2022,
+    //title: "93% improvement in Tenable Risk Points",
+    title:
+      "#2 ranked among over 200 Adient facilities worldwide in Tenable Security Risk Points, starting from #127",
+    place: "at Adient",
+    description:
+      "Our team was recognized for reducing the security risk score below the 10 points in Tenable metrics in few months, achieving the status of the 2nd safest plant among all Adient facilities worldwide. After that, we continued to work hard with BI Analysis and AA to lower the risk to 1.5, achieving a 93.55% total improvement in a year. Additionally, I collaborated with other teams to help them to achieve similar scores in their plants by standarizing our work methodology.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/svgl.webp",
+  },
+  {
+    year: 2022,
+    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    description:
+      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://adventjs.dev",
+    image: "/projects/adventjs.webp",
+  },
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
+  {
+    PROJECTS.map(({ image, year, title, place, description, link, github }) => (
+      <article class="flex flex-col space-x-0 group [&>strong]:text-blue-500 [&>strong]:font-semibold">
+        <div class="mb-2 relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <img
+            alt={title}
+            class="object-cover object-top w-full h-54 transition duration-500 sm:h-auto md:scale-110 md:group-hover:scale-105"
+            loading="lazy"
+            src={image}
+          />
+        </div>
+        <h5 class="text-xs text-center opacity-80 text-gray-800 dark:text-gray-100">
+          - {year + " " + place} -
+        </h5>
+        <h4 class="text-md text-center text-pretty font-bold text-gray-800 dark:text-gray-200">
+          {title}
+        </h4>
+        <div class="flex flex-wrap text-sm mt-1 text-center text-pretty text-gray-700 dark:text-gray-400">
+          {description}
+        </div>
+        <footer class="flex items-center justify-center mt-3 gap-x-2">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-4 " />
+              Code
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+      </article>
+    ))
+  }
+</div>

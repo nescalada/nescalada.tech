@@ -1,0 +1,181 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import SubTitleSection from "@/components/SubTitleSection.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Security from "./icons/Security.astro";
+
+const TAGS = {
+  ETL: {
+    name: "ETL",
+    class: "bg-lime-900 text-white",
+    icon: null,
+  },
+  SQL: {
+    name: "SQL",
+    class: "bg-fuchsia-900 text-white",
+    icon: null,
+  },
+  DATAVISUALIZATION: {
+    name: "Data Visualization",
+    class: "bg-blue-900 text-white",
+    icon: null,
+  },
+  LEAN: {
+    name: "LEAN",
+    class: "bg-rose-900 text-white",
+    icon: null,
+  },
+  INTERNATIONALCOLLABORATION: {
+    name: "Intl. Collaboration",
+    class: "bg-teal-900 text-white",
+    icon: null,
+  },
+  AUTOMATION: {
+    name: "Scripting & AA",
+    class: "bg-gray-700 text-white",
+    icon: null,
+  },
+  AUDITS: {
+    name: "Audits & Compliance",
+    class: "bg-sky-900 text-white",
+    icon: null,
+  },
+};
+
+const DATABI = [
+  {
+    year: "2023/24",
+    title: "Over 85% process downtime improved in a year",
+    place: "at Adient",
+    description:
+      "By applying good practices and work methodologies, our team achieved a significant improvement, reducing process downtime on our main JIT seats line from 33% to 5%. I contributed to this by performing ETL, data analysis and BI for both local and Brazilian teams.",
+    linkedin: "https://www.linkedin.com/in/tami-tamara-essenburgh-b226b99/",
+    github: null,
+    image: "/projects/tenableScore.webp",
+    href: null,
+    tags: [
+      TAGS.ETL,
+      TAGS.SQL,
+      TAGS.AUTOMATION,
+      TAGS.LEAN,
+      TAGS.DATAVISUALIZATION,
+      TAGS.INTERNATIONALCOLLABORATION,
+    ],
+  },
+  {
+    year: "2011/Now on my own",
+    place: null,
+    title: "DataBI knowledge, challenges and exercises",
+    description:
+      "I hold several databi certificates, including 'Linux Certified Security System', 'Ethical Hacking Expert' and 'Privacy Awareness'. I regularly participate in databi challenges on platforms like HackTheBox, OverTheWire and others. Additionally, I stay up-to-date by following YouTube and Telegram channels such as SeguInfo and Chema Alonso enhancing my knowledge in CISSP, CCSK, CSFPC as well as other international certifications, tools and broader databi topics.",
+    link: null,
+    linkedin: "https://www.linkedin.com/in/nescalada/details/certifications/",
+    github: null,
+    util: "https://carreralinux.com.ar/administrador-de-redes-linux-ciberseguridad-y-hacking-etico/",
+    href: "https://www.linkedin.com/in/nescalada/details/certifications/",
+    image: "/projects/hackingCertificates.webp",
+    tags: [TAGS.AUTOMATION, TAGS.AUDITS],
+  },
+  {
+    year: "2017/2024",
+    place: "at Adient",
+    title: "Digital Certificates for Electronic Invoices & Bank Connections",
+    description:
+      "I was in charge of creating digital certificates for electronic invoices, participating in an international SAP team to achieve this functionality in our system. Collaborated with teams in Japan, Argentina, and the USA. My responsibilities included implementing encryption, hashes, and checksums, as well as managing certificate renewals. I also developed similar solutions for secure connections with our banking provider.",
+    link: null,
+    linkedin: null,
+    github: null,
+    href: null,
+    image: "/projects/cryptography.webp",
+    tags: [TAGS.AUTOMATION],
+  },
+];
+---
+
+<SubTitleSection>
+  {"<"}DevOps & Programming{" />"}
+</SubTitleSection>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
+  {
+    DATABI.map(
+      ({
+        image,
+        year,
+        title,
+        place,
+        description,
+        util: lcssplan,
+        link: preview,
+        linkedin,
+        github,
+        href,
+        tags,
+      }) => (
+        <div class="flex opacity-80 hover:opacity-100 flex-col space-x-0 group [&>strong]:text-blue-500 [&>strong]:font-semibold">
+          <ul class="flex items-center justify-center flex-wrap mb-2 gap-2 transition duration-500 ease-in-out transform overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  {tag.icon && <tag.icon class="size-4" />}
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div class="mb-2 relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <a href={href}>
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-54 transition duration-500 sm:h-auto md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </a>
+          </div>
+          <h5 class="text-xs text-center opacity-80 text-gray-800 dark:text-gray-100">
+            - {year + " "}
+            {place ? place : " "} -
+          </h5>
+          <h4 class="text-md text-center text-pretty font-bold text-gray-800 dark:text-gray-200">
+            {title}
+          </h4>
+          <div class="flex flex-wrap text-sm mt-1 text-center text-pretty text-gray-700 dark:text-gray-400">
+            {description}
+          </div>
+          <footer class="flex items-center justify-center mt-3 gap-x-2">
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-4 " />
+                Code
+              </LinkButton>
+            )}
+            {preview && (
+              <LinkButton href={preview}>
+                <Link class="size-4" />
+                Preview
+              </LinkButton>
+            )}
+            {lcssplan && (
+              <LinkButton href={lcssplan}>
+                <Link class="size-4" />
+                LCSS plan
+              </LinkButton>
+            )}
+            {linkedin && (
+              <LinkButton href={linkedin}>
+                <LinkedIn class="size-4" />
+                LinkedIn
+              </LinkButton>
+            )}
+          </footer>
+        </div>
+      )
+    )
+  }
+</div>

@@ -1,0 +1,54 @@
+---
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import TelegramIcon from "@/components/icons/Telegram.astro";
+import SocialPill from "@/components/SocialPill.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="flex flex-col w-full container items-center text-center mt-16 mb-10"
+>
+  <nav class="mb-1 flex flex-wrap gap-4 justify-center">
+    <SocialPill href="mailto:nehuenescalada@gmail.com">
+      <MailIcon class="size-4" />
+    </SocialPill>
+    <SocialPill href="https://linkedin.com/in/nescalada">
+      <LinkedInIcon class="size-4" />
+    </SocialPill>
+    <SocialPill href="https://t.me/nescalada">
+      <TelegramIcon class="size-4" />
+    </SocialPill>
+  </nav>
+  <span class="my-2 font-bold text-sm text-blue-500">GET IN TOUCH!</span>
+
+  <div class="mt-1 opacity-80 w-full mx-auto">
+    <p class="text-xs text-zinc-800/90 dark:text-zinc-200/90">
+      © {currentYear}
+      <a href="https://nescalada.tech" class="hover:underline"
+        >Nehuen Escalada</a
+      >, inspired by
+      <a href="https://midu.dev/" class="hover:underline">midudev</a>.
+    </p>
+  </div>
+  <ul
+    class="mt-4 flex flex-wrap justify-center text-sm font-medium dark:text-white/90"
+  >
+    <li class="mx-4">
+      <a href="/#" class="hover:underline">Home</a>
+    </li>
+    <li class="mx-1">|</li>
+    <li class="mx-4">
+      <a href="/#portfolio" class="hover:underline">Portfolio</a>
+    </li>
+    <li class="mx-1">|</li>
+    <li class="mx-4">
+      <a href="/#about" class="hover:underline">About</a>
+    </li>
+    <li class="mx-1">|</li>
+    <li class="mx-4">
+      <a href="/#background" class="hover:underline">Background</a>
+    </li>
+  </ul>
+</footer>
