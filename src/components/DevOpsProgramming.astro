@@ -23,22 +23,42 @@ const TAGS = {
   },
   TESTING: {
     name: "Testing",
-    class: "bg-rose-900 text-white",
-    icon: null,
-  },
-  PATTERNSANDARCH: {
-    name: "Patterns & Architecture",
     class: "bg-teal-900 text-white",
     icon: null,
   },
+  PATTERNSANDARCH: {
+    name: "Patterns & Arch.",
+    class: "bg-indigo-950 text-white",
+    icon: null,
+  },
   NETWORKINGPROTOCOLS: {
-    name: "Networking & Protocols",
-    class: "bg-gray-200 text-black",
+    name: "Network & Protocols",
+    class: "bg-fuchsia-950 text-white",
     icon: null,
   },
   UML: {
     name: "UML",
-    class: "bg-sky-900 text-white",
+    class: "bg-rose-950 text-white",
+    icon: null,
+  },
+  GOLANG: {
+    name: "Golang",
+    class: "bg-sky-500 text-white",
+    icon: null,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "bg-blue-800 text-white",
+    icon: null,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-rose-800 text-white",
+    icon: null,
+  },
+  CSHARP: {
+    name: "C#",
+    class: "bg-purple-900 text-white",
     icon: null,
   },
 };
@@ -55,18 +75,20 @@ const DATABI = [
     image: "/projects/typescript-golang.webp",
     href: "https://gitlab.com/nescalada",
     tags: [
+      TAGS.GOLANG,
+      TAGS.TYPESCRIPT,
+      TAGS.TESTING,
       TAGS.PATTERNSANDARCH,
+      TAGS.NETWORKINGPROTOCOLS,
       TAGS.BACKEND,
       TAGS.FRONTEND,
-      TAGS.TESTING,
       TAGS.DATABASES,
-      TAGS.NETWORKINGPROTOCOLS,
     ],
   },
   {
     year: "2014 during my Engineering coursework",
-    place: "in UTN FRRo",
-    title: "JAVA medical records system",
+    place: "at UTN FRRo",
+    title: "JAVA medical records web system",
     description:
       "My friends and I re-build the code from a previous desktop project into JAVA in our university degree and also we build a new WEB app. We learn some: JAVA, UML, Agile, JSP/Servlet, Client-Server, Maven, Git, Bitbucket, Google Drive, MongoDB, JSON, JQuery, AJAX, CSS, HTML, Javascript, Eclipse IDE, Foundation, Regex and more tools. You can check all the documentation by following the preview button below.",
     link: "https://drive.google.com/drive/folders/10tRL-a1naRP5-KFxOjJ141H3Npx3J0nM?usp=drive_link",
@@ -76,25 +98,33 @@ const DATABI = [
     href: "https://drive.google.com/drive/folders/10tRL-a1naRP5-KFxOjJ141H3Npx3J0nM?usp=drive_link",
     image: "/projects/systemDesign.webp",
     tags: [
-      TAGS.BACKEND,
-      TAGS.FRONTEND,
+      TAGS.JAVA,
       TAGS.DATABASES,
       TAGS.UML,
+      TAGS.BACKEND,
+      TAGS.FRONTEND,
       TAGS.PATTERNSANDARCH,
     ],
   },
   {
-    year: "2017/2024",
-    place: "at Adient",
-    title: "Digital Certificates for Electronic Invoices & Bank Connections",
+    year: "2014 during my Engineering coursework",
+    place: "at UTN FRRo",
+    title: "C# music event web system",
     description:
-      "I was in charge of creating digital certificates for electronic invoices, participating in an international SAP team to achieve this functionality in our system. Collaborated with teams in Japan, Argentina, and the USA. My responsibilities included implementing encryption, hashes, and checksums, as well as managing certificate renewals. I also developed similar solutions for secure connections with our banking provider.",
-    link: null,
+      "My friend Matias and I worked together to create a website using C# .NET for his friend's sound entrepreneurship called Cerebro Group. We learned a lot: stored procedures, D.E.R., Crystal Reports, SQL Server 2008, .NET Framework v4, Visual Studio 2010, Bootstrap, and more",
+    link: "https://drive.google.com/file/d/1k7OH2nnyU1TrC-RmMcMB9ADQzVAJXdR1/view?usp=sharing",
     linkedin: null,
     gitlab: null,
     href: null,
-    image: "/projects/cryptography.webp",
-    tags: [TAGS.NETWORKINGPROTOCOLS],
+    image: "/projects/systemDesignCsharp.webp",
+    tags: [
+      TAGS.CSHARP,
+      TAGS.PATTERNSANDARCH,
+      TAGS.UML,
+      TAGS.BACKEND,
+      TAGS.FRONTEND,
+      TAGS.DATABASES,
+    ],
   },
 ];
 ---
@@ -112,7 +142,7 @@ const DATABI = [
         place,
         description,
         util: lcssplan,
-        link: preview,
+        link: documentation,
         linkedin,
         gitlab,
         href,
@@ -158,10 +188,10 @@ const DATABI = [
                 Code
               </LinkButton>
             )}
-            {preview && (
-              <LinkButton href={preview}>
+            {documentation && (
+              <LinkButton href={documentation}>
                 <Link class="size-4" />
-                Preview
+                Documentation
               </LinkButton>
             )}
             {lcssplan && (
