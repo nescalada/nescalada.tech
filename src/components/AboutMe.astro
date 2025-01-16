@@ -1,79 +1,109 @@
 ---
- const personalImageAlt = "Miguel Ángel"
+const personalImageAlt = "Nehuen Escalada";
+import SocialPill from "@/components/SocialPill.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import TelegramIcon from "@/components/icons/Telegram.astro";
 ---
 
-<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+<article
+  class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300"
+>
+  <a href="https://www.linkedin.com/in/nescalada/" target="_blank">
+    <img
+      width="200"
+      height="200"
+      src="/me.webp"
+      alt={personalImageAlt}
+      class="mb-10 object-cover w-64 h-auto aspect-square p-1 -rotate-2 lg:p-2 lg:w-64 rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+      style="object-position: 50% 50%"
+    /></a
+  >
+
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="[&>p]:mb-4 [&>p>strong]:text-blue-500 [&>p>strong]:font-semibold text-pretty"
   >
     <p>
-      Me llamo Miguel Ángel pero mis amigos me llaman midu. Empecé en la
-      programación con un Amstrad, tenía 10 años. Actualmente estoy <strong
-        >liderando equipos de desarrollo en multinacionales</strong
-      >.
+      <strong
+        >I have more than 9 years of ICT work experience gained on positions as
+        Engineer Support Specialist, IT Analyst and Network Technician on my
+        previous jobs.</strong
+      >
     </p>
-
     <p>
-      Algunos de mis éxitos incluyen <strong
-        >colaborar con Mozilla para el desarrollo de las primeras apps en su
-        sistema FirefoxOS</strong
-      >. Aunque hoy está desaparecido fue un gran avance en el mundo del
-      desarrollo web.
+      🚀 Just to mention some drive and a track record of going above-and-beyond
+      expectations; in the past seven years while working at Adient Automotive
+      (an international Johnson Control’s seats company with +70.000
+      collaborators worldwide) my IT team and I were <strong
+        >recognized with a bonus by improve significantly our SecOps KPIs
+        archiving the status of the second safest plant among more than 200
+        Adient facilities around the globe,
+      </strong>starting from the last positions and archiving a 93.55% of total
+      improvement in a year under my lead for this initiative, by doing
+      strategic analysis, threat modelling, risk management, automation, taking
+      care about the security architecture and <strong
+        >following good practices, frameworks and standards as NIST CSF, ITIL,
+        ISO 27001 among others
+      </strong>(same time I contributed with our worldwide SOC team to improve
+      the scores in all other facilities). <strong
+        >I achieved a “positive impact recognition” certificate</strong
+      > by reducing manual tasks by 47% in two months through scripting and automation
+      (regarding internal audits). I got <strong
+        >a “customer satisfaction recognition” for commitment and quality
+        actions in problem solving</strong
+      > by temporarily acting as IT Manager in charge of the entire local IT area
+      during COVID-19. And also, in my previous job at the Provincial State Pension
+      Fund also I got <strong
+        >a “recommendation letter” for efficiency, effectiveness and
+        responsibility.
+      </strong>
     </p>
-
     <p>
-      Como creador de contenido, <strong
-        >cuento con el canal de habla hispana más visto del mundo en la
-        categoría de <em class="italic">Software & Game Development</em> en Twitch</strong
-      >. Mi objetivo es mejorar la empleabilidad de la comunidad hispana y el
-      acceso a contenido de calidad.
+      <strong
+        >📚 I coursework an entire five years Engineering Systems Bachelor
+        degree</strong
+      >
+      with a current GPA of 8.36 over 10 and
+      <strong
+        >I’m certified as Personal and Professional Computer Technician</strong
+      >
+      by a six years professional study coursework with a GPA of 9.28 over 10. Also
+      <strong>I have</strong> some
+      <strong>
+        international certificates as ISO 45001, PowerBI (ETL/Analysis), VMWare
+      </strong> and more as
+      <strong>Ethical Hacker and Linux Certified Security Systems</strong>, PHP,
+      Web design, LEAN, 5S, AMS, BOS, Ethics, Diversity & Inclusion, Data
+      Privacy and others.
+    </p>
+    <p>
+      <strong
+        >⭐ I’m proactive by nature, a problem solver and a detailed oriented
+        player with a strong focus on archiving objectives. I have experience
+        leading teams and working independently, with effective delegation
+        skills.
+      </strong>
+    </p>
+    <p>
+      🌱 I like to find details that make my tasks exciting and I try to improve
+      myself every day. I know I'm no better than anyone and I'm just a grain of
+      sand in this vast universe. I enjoy learning, sharing knowledge and
+      work-life balance.
     </p>
   </div>
 
-  <img width="200" height="200" src="/me.png" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
-
+  <nav class="flex flex-wrap gap-4 justify-center">
+    <SocialPill href="mailto:nehuenescalada@gmail.com">
+      <MailIcon class="size-4" />
+      Email
+    </SocialPill>
+    <SocialPill href="https://linkedin.com/in/nescalada">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://t.me/nescalada">
+      <TelegramIcon class="size-4" />
+      Telegram
+    </SocialPill>
+  </nav>
 </article>
-
-<!-- FRASES PROHIBIDAS EN VUESTRO PORTFOLIO
-
-<p>
-  Mi sueño es encontrar mi primer empleo en el mundo de la programación. Una empresa donde pueda seguir aprendiendo. ❌
-</p>
-
-<p>
-  ❌ Apasionado de la programación desde chekitito. Me encantan los ordenadores y crear páginas web buenas y rápidas con la última tecnología.
-</p>
-
-<p>
-  Trabajo bien en equipo. Siempre estoy aprendiendo cosas nuevas.
-</p>
-
--------------------------------------
-
---------------------------------------
-
-<p>
-  ¡Soy Leo! Estudié Derecho Empresarial y, tras años ejerciendo, me pasé al mundo de la Programación. Desde entonces disfruto creando experiencias web para los usuarios.
-</p>
-
-<p>
-  Entre mis éxitos destaco que durante el Grado Superior, ayudé a mis compañeros a aprender sobre TDD. Me encanta el testing, creo en su importancia, y me gusta compartir mi conocimiento sobre ello.
-</p>
-
-<p>
-  Cuento con experiencia desarrollando aplicaciones móviles, y he creado una iniciativa llamada X para mezclar mis dos pasiones: la programación y el derecho. Ayudando a la sociedad a acceso a una defensa justa.
-</p>
-
----------------------------------------
-
-<p>Me llamo Sara, tengo 25 años y soy de Santiago, Chile 🇨🇱. Terminé mis estudios como Desarrolladora Web. Me encanta enfocarme en la parte del rendimiento, para ofrecer la mejora experiencia al usuario.</p>
-
-<p>
-  Colaboro en la organización del MeetUp local BeerJS donde reunimos a desarrolladores de Santiago para compartir conocimiento y experiencias. El año 2023 hicimos un total de 25 charlas con más de 2000 asistentes.
-</p>
-
-<p>
-  Además de participar activamente en la comunidad, he participado en la Hackathon de Midudev quedando en 3er puesto con mi proyecto _Chatty_, donde usando IA podías interactuar con un PDF. ¡Échale un vistazo!
-</p>
-
--->
