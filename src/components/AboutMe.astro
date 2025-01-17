@@ -1,5 +1,4 @@
 ---
-const personalImageAlt = "Nehuen Escalada";
 import SocialPill from "@/components/SocialPill.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
@@ -9,16 +8,26 @@ import TelegramIcon from "@/components/icons/Telegram.astro";
 <article
   class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300"
 >
-  <a href="https://www.linkedin.com/in/nescalada/" target="_blank">
-    <img
-      width="200"
-      height="200"
-      src="/me.webp"
-      alt={personalImageAlt}
-      class="mb-10 object-cover w-64 h-auto aspect-square p-1 -rotate-2 lg:p-2 lg:w-64 rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
-      style="object-position: 50% 50%"
-    /></a
-  >
+  <div class="container">
+    <a href="https://www.linkedin.com/in/nescalada/" target="_blank">
+      <div class="flip-card">
+        <div class="front">
+          <img
+            src="/me.webp"
+            alt="Nehuen Escalada 2025"
+            class="ring-black/40 dark:ring-white/20 bg-slate-100"
+          />
+        </div>
+        <div class="back">
+          <img
+            src="/alsome.webp"
+            alt="Nehuen Escalada 2023"
+            class="ring-black/40 dark:ring-white/20 bg-slate-100"
+          />
+        </div>
+      </div></a
+    >
+  </div>
 
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-blue-500 [&>p>strong]:font-semibold text-pretty"
@@ -107,3 +116,69 @@ import TelegramIcon from "@/components/icons/Telegram.astro";
     </SocialPill>
   </nav>
 </article>
+
+<style>
+  .container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: rotate(-2deg);
+  }
+
+  .container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0
+      var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+      calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  }
+
+  .flip-card {
+    position: relative;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card .front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+  }
+
+  .flip-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    z-index: 99;
+    border-radius: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 200px;
+    transform: rotateY(180deg);
+  }
+
+  .container:hover .front {
+    transform: rotateY(-180deg);
+  }
+
+  .container:hover .back {
+    transform: rotateY(0deg);
+  }
+</style>
