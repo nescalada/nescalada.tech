@@ -1,68 +1,157 @@
 ---
 import GitHub from "./icons/GitHub.astro";
+import GitLab from "./icons/GitLab.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import Typescript from "./icons/Typescript.astro";
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-gray-200 text-black",
+    icon: Tailwind,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: "bg-blue-200 text-black",
+    icon: Typescript,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-fuchsia-900 text-white",
+    icon: AstroIcon,
+  },
+  GITLAB: {
+    name: "GitLab",
+    class: "bg-orange-500 text-white",
+    icon: GitLab,
+  },
+};
 
 const PROJECTS = [
   {
-    year: 2022,
-    //title: "93% improvement in Tenable Risk Points",
-    title:
-      "#2 ranked among over 200 Adient facilities worldwide in Tenable Security Risk Points, starting from #127",
-    place: "at Adient",
+    year: "2025",
+    title: "New responsive portfolio",
+    place: "on my own",
     description:
-      "Our team was recognized for reducing the security risk score below the 10 points in Tenable metrics in few months, achieving the status of the 2nd safest plant among all Adient facilities worldwide. After that, we continued to work hard with BI Analysis and AA to lower the risk to 1.5, achieving a 93.55% total improvement in a year. Additionally, I collaborated with other teams to help them to achieve similar scores in their plants by standarizing our work methodology.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
+      'I design a new personal website with lazy-loading, 3D CSS animations, light/dark theme and more. You can see more background on the old portfolio by clicking the following "Link" button or the image above.',
+    linkedin: null,
+    gitlab: "https://gitlab.com/nescalada",
+    github: "https://gitlab.com/nescalada",
+    link: "https://sites.google.com/view/nescalada",
+    image: "/projects/portfolio2025.webp",
+    href: "https://sites.google.com/view/nescalada",
+    tags: [TAGS.TAILWIND, TAGS.TYPESCRIPT, TAGS.ASTRO, TAGS.GITLAB],
   },
   {
-    year: 2022,
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    year: "2019/Now when I can",
+    place: "on my own",
+    title: "Charity Events & Contributions",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
+      'I collaborated with my colleagues at Adient on various community and charity events. We prepared and delivered food rations to regional soup kitchen and more. I also contribute with L.A.L.C.E.C. ORG, "La Liga Argentina de Lucha Contra El Cancer" that means "Argentine League for the Fight Against Cancer", to raise funds for their cause occasionally. You can contribute too following the link below or by clicking the image above.',
+    link: "https://www.lalcec.org.ar/",
+    linkedin: null,
+    gitlab: null,
+    href: "https://www.lalcec.org.ar/",
+    image: "/projects/charity.webp",
+    tags: [],
+  },
+  {
+    year: "2023/Now",
+    place: "on my own",
+    title: "AI, cyber and updated in latest trends",
+    description:
+      "I'm commitment to providing useful solutions to any stakeholder while embracing good methodologies and good practices as ESG, risk management, ISO 27001/ISO 45001, ITIL, 5S, LEAN, 8D, agile, Kanban, data analytics & automations, problem-solving, SCRUM and all the knowledge previously acquired. I practice the latest trends and technologies to ensure the best solutions.",
+    link: "https://sites.google.com/view/nescalada",
+    linkedin: null,
+    gitlab: null,
+    href: "https://sites.google.com/view/nescalada",
+    image: "/projects/trends.webp",
+    tags: [],
   },
 ];
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
   {
-    PROJECTS.map(({ image, year, title, place, description, link, github }) => (
-      <article class="flex flex-col space-x-0 group [&>strong]:text-blue-500 [&>strong]:font-semibold">
-        <div class="mb-2 relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-          <img
-            alt={title}
-            class="object-cover object-top w-full h-54 transition duration-500 sm:h-auto md:scale-110 md:group-hover:scale-105"
-            loading="lazy"
-            src={image}
-          />
+    PROJECTS.map(
+      ({
+        image,
+        year,
+        title,
+        place,
+        description,
+        link,
+        linkedin,
+        gitlab,
+        github,
+        href,
+        tags,
+      }) => (
+        <div class="flex opacity-80 hover:opacity-100 flex-col space-x-0 group [&>strong]:text-blue-500 [&>strong]:font-semibold">
+          <ul class="flex items-center justify-center flex-wrap mb-2 gap-2 transition duration-500 ease-in-out transform overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  {tag.icon && <tag.icon class="size-4" />}
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div class="mb-2 relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <a href={href}>
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-54 transition duration-500 sm:h-auto md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </a>
+          </div>
+          <h5 class="text-xs text-center opacity-80 text-gray-800 dark:text-gray-100">
+            - {year + " "}
+            {place ? place : " "} -
+          </h5>
+          <h4 class="text-md text-center text-pretty font-bold text-gray-800 dark:text-gray-200">
+            {title}
+          </h4>
+          <div class="flex flex-wrap text-sm mt-1 text-center text-pretty text-gray-700 dark:text-gray-400">
+            {description}
+          </div>
+          <footer class="flex items-center justify-center mt-3 gap-x-2">
+            {gitlab && (
+              <LinkButton href={gitlab}>
+                <GitLab class="size-4 " />
+                Code
+              </LinkButton>
+            )}
+            {github && (
+              <LinkButton href={github}>
+                <GitHub class="size-4 " />
+                Code
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                <Link class="size-4" />
+                Link
+              </LinkButton>
+            )}
+            {linkedin && (
+              <LinkButton href={linkedin}>
+                <LinkedIn class="size-4" />
+                LinkedIn
+              </LinkButton>
+            )}
+          </footer>
         </div>
-        <h5 class="text-xs text-center opacity-80 text-gray-800 dark:text-gray-100">
-          - {year + " " + place} -
-        </h5>
-        <h4 class="text-md text-center text-pretty font-bold text-gray-800 dark:text-gray-200">
-          {title}
-        </h4>
-        <div class="flex flex-wrap text-sm mt-1 text-center text-pretty text-gray-700 dark:text-gray-400">
-          {description}
-        </div>
-        <footer class="flex items-center justify-center mt-3 gap-x-2">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-4 " />
-              Code
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-      </article>
-    ))
+      )
+    )
   }
 </div>
