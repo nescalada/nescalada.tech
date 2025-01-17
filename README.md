@@ -1,7 +1,7 @@
 # 👨🏻‍💻 nescalada.tech personal portfolio
 
 <p>
-A few months ago, I created a simple portfolio using Google Sites. However, since I wanted to showcase some of my development skills, I decided to build a new portfolio. I took inspiration from my previous Google Sites portfolio and Midudev's portfolio, and I built this one using Astro, Tailwind CSS, and more.
+A few months ago, I created a simple portfolio using Google Sites. However, since I wanted to use Astro and practice a little, I decided to build a new portfolio. I took inspiration from my previous Google Sites portfolio and Midudev's portfolio, and I built this one using Astro, Tailwind CSS, and more.
 
 Feel free to use this portfolio as a template for your own projects! 🚀
 </p>
