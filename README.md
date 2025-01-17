@@ -1,9 +1,9 @@
 # 👨🏻‍💻 Porfolio nescalada (mix google sites y midudev)
 
 <p>
-Some month ago I made a simple Google Sites portfolio but as I know I need to show a little of my dev skills I decided to make a new portfolio. So I made it inspired in my previous Google Sites and Midudev portfolio with Astro, Tailwind CSS and more.
+A few months ago, I created a simple portfolio using Google Sites. However, since I wanted to showcase some of my development skills, I decided to build a new portfolio. I took inspiration from my previous Google Sites portfolio and Midudev's portfolio, and I built this one using Astro, Tailwind CSS, and more.
 
-Feel free to use this portfolio as template for your own projects 🚀.
+Feel free to use this portfolio as a template for your own projects! 🚀
 </p>
 
 <div align="center">
